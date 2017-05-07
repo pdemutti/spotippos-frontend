@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Index</title>
+</head>
+<body>
+
+  <h1>Handlebars</h1>
+  <ul>
+    {{#each users as |user|}}
+    <li><a href="/{{user.username}}">{{user.name.full}}</a></li>
+    {{/each}}
+  </ul>
+  <div id="spotippos-container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
+  <script src="./static/js/dist/bundle.js" charset="utf-8"></script>
+  <script id="spotipposTemplate" type="text/x-handlebars-template">
+       <div>{{data.description}}</div>
+   </script>
+   <div id="content-placeholder">
+
+   </div>
+    <script id="some-template" type="text/x-handlebars-template">
+      <table>
+        <thead>
+          <th>Username</th>
+          <th>Real Name</th>
+          <th>Email</th>
+        </thead>
+        <tbody>
+        {{#usuarios}}
+          <tr>
+            <td>{{username}}</td>
+            <td>{{firstName}} {{lastName}}</td>
+            <td>{{email}}</td>
+          </tr>
+        {{/usuarios}}
+        </tbody>
+      </table>
+    </script>
+    <script type="text/javascript">
+
+    var rawTemplate = document.getElementById('some-template').innerHTML;
+    var compiledTemplate = Handlebars.compile(rawTemplate);
+    var ourGeneretedHTML = { usuarios: [
+        {username: "paulo", firstName: "Paulo", lastName: "Demutti", email: "alan@test.com" },
+        {username: "allison", firstName: "Allison", lastName: "House", email: "allison@test.com" },
+        {username: "ryan", firstName: "Ryan", lastName: "Carson", email: "ryan@test.com" }
+      ]};
+      var ourGeneretedHTML = compiledTemplate(ourGeneretedHTML);
+
+      var spotipposContainer = document.getElementById('content-placeholder');
+      spotipposContainer.innerHTML = ourGeneretedHTML;
+    </script>
+</body>
+</html>
