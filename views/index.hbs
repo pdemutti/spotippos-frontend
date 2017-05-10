@@ -7,13 +7,52 @@
 <body>
 
   <h1>Handlebars</h1>
+  <div class="filter">
+  <form id="formFilter" method="get">
+  <fieldset>
+    <legend>Filter</legend>
+    <ul>
+    <li>
+      <input type="text" id="ax" class="filter-field" name="ax" placeholder="ax">
+    </li>
+    <li>
+      <input type="text" id="ay" class="filter-field" name="ay" placeholder="ay">
+    </li>
+    <li>
+      <input type="text" id="bx" class="filter-field" name="bx" placeholder="bx">
+    </li>
+    <li>
+      <input type="text" id="by" class="filter-field" name="by" placeholder="by">
+    </li>
+    <li>
+      <input type="text" id="id" class="filter-field" name="id" placeholder="id">
+    </li>
+    <li>
+      <input type="text" id="squareMeters" class="filter-field" name="squareMeters" placeholder="squareMeters">
+    </li>
+    <li>
+      <input type="text" id="beds" class="filter-field" name="beds" placeholder="beds">
+    </li>
+    <li>
+      <input type="text" id="baths" class="filter-field" name="baths" placeholder="baths">
+    </li>
+    <li>
+      <input type="text" id="minprice" class="filter-field" name="minprice" placeholder="minprice">
+    </li>
+    <li>
+      <input type="text" id="maxprice" class="filter-field" name="maxprice" placeholder="maxprice">
+    </li>
+    </ul>
+  </fieldset>
+  </form>
+  </div>
   <div class="">
-    {{#each room as |room|}}
-      {{title}}
+    {{#each rooms as |room|}}
+      <p>{{room.title}}</p>
     {{/each}}
   </div>
   <div class="">
-    {{room.title}}
+
   </div>
   <div id="spotippos-container"></div>
 
