@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>User Index</title>
-</head>
-<body>
-
-  <h1>Handlebars</h1>
-  <div class="filter">
+<div class="filter">
   <form id="formFilter" method="get">
   <fieldset>
     <legend>Filter</legend>
@@ -47,16 +38,7 @@
   </form>
   </div>
   <div class="">
-    {{#each rooms as |room|}}
+    {{# each rooms as |room|}}
       <p>{{room.title}}</p>
     {{/each}}
   </div>
-  <div class="">
-
-  </div>
-  <div id="spotippos-container"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
-  <script src="./static/js/dist/bundle.js" charset="utf-8"></script>
-</body>
-</html>

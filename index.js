@@ -1,42 +1,27 @@
 var express = require('express')
-
 var app = express()
 var fs = require('fs')
 var _ = require('lodash')
 var engines = require('consolidate')
-var proxy = require('express-http-proxy');
 var axios = require('axios');
+var hbs = require('express-handlebars');
 
-app.engine('hbs', engines.handlebars)
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutDir: __dirname + '/views/layouts/'}))
 app.set('views', './views')
 app.set('view engine', 'hbs')
 
-var users = []
-
-app.use('/proxy', proxy('http://spotippos.vivareal.com', {
-  filter: function(req, res) {
-     return req.method == 'GET';
-  }
-}));
 app.get('/', function (req, res) {
   console.log(req);
-  // res.render('index', {users: users})
-  axios.get('http://spotippos.vivareal.com/properties?ax=1&ay=1&bx=20&by=20')
-  .then(function (response) {
-    res.render('index', {rooms: response.data.properties})
-    // console.log(response.data.properties);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+  res.render('index', {title: 'Demutti Title'});
 })
 
 app.get('/filter', function (req, res) {
   console.log(req.query, getParams(req.query));
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
-     console.log(response.data);
-    res.json(response.data);
+    res.render('index', {rooms: response.data.properties, title: "Novo Title"})
+    console.log(response.data);
+
   })
   .catch(function (error) {
     console.log(error);
