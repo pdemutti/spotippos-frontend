@@ -4,24 +4,39 @@ var fs = require('fs')
 var _ = require('lodash')
 var engines = require('consolidate')
 var axios = require('axios');
-var hbs = require('express-handlebars');
+// var hbs = require('express-handlebars');
+var exphbs = require('express-handlebars');
 
-app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutDir: __dirname + '/views/layouts/'}))
+app.engine('hbs', exphbs({extname: 'hbs', defaultLayout: 'layout', layoutDir: __dirname + '/views/layouts/'}))
+
+var hbs = exphbs.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        input_label: function (context, options) {
+          var id = options.hash.id;
+          return '<label for="'+ id +'" class="control-label">'+ context +'</label>';
+         },
+        bar: function () { return 'BAR!'; },
+        foo: function(){
+          return '<div>Demuttão</div>'
+        }
+    }
+});
 app.set('views', './views')
 app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
-  console.log(req);
+  // console.log(req);
   res.render('index', {title: 'Demutti Title'});
 })
 
-app.get('/filter', function (req, res) {
+app.get('/filter', function (req, res, next) {
 
   console.log(req.query, getParams(req.query));
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
-    res.render('index', {rooms: response.data.properties, title: "Novo Title"})
-    console.log(response.data);
+    res.render('index', {rooms: response.data.properties, title: "Novo Title", helpers: hbs.helpers})
+    // console.log(response.data);
 
   })
   .catch(function (error) {
