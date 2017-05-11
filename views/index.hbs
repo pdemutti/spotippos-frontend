@@ -1,4 +1,4 @@
-<div class="filter">
+
   <form id="formFilter" method="get">
   <fieldset>
     <legend>Filter</legend>
@@ -36,9 +36,10 @@
     </ul>
   </fieldset>
   </form>
-  </div>
-  <div class="">
+
+  <div>
     {{# each rooms as |room|}}
       <p>{{room.title}}</p>
+      <p>{{room.description}}</p>
     {{/each}}
   </div>

@@ -16,6 +16,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/filter', function (req, res) {
+
   console.log(req.query, getParams(req.query));
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
@@ -46,6 +47,4 @@ function getParams(params) {
 
 app.use('/static', express.static(__dirname + '/public'));
 
-
-
-app.listen('3000')
+app.listen('3001')

@@ -79,7 +79,11 @@ App.Spotippos = (function ($, win, doc) {
       return xhr;
     }
     function success (data){
-      console.log(data);
+      var current = doc.querySelector('body'),
+          live = doc.createElement('html'),
+          selector = 'body > div';
+      live.innerHTML = data;
+      current.querySelector(selector).innerHTML = live.querySelector(selector).innerHTML;
     }
     function addEvent (el, type, handler){
       if (el.attachEvent) el.attachEvent('on'+type, handler); else el.addEventListener(type, handler);
@@ -89,10 +93,10 @@ App.Spotippos = (function ($, win, doc) {
     }
 
     function filter () {
-      var form = doc.getElementById('formFilter');
-      var inputs = form.getElementsByTagName('input');
-      var i;
-      var input;
+      var form = doc.getElementById('formFilter'),
+        inputs = form.getElementsByTagName('input'),
+        i,
+        input;
 
       for (i = 0; i < inputs.length; i ++) {
         input = inputs[i];
