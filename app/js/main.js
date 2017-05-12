@@ -6,11 +6,6 @@ App.Spotippos = (function ($, win, doc) {
     var params = {}; // [{ax: 1}, {page: 4}, {bx: 20}]
 
     function setup () {
-        // var domainApi = '/proxy';
-        // getData(domainApi + "/properties?beds=1&maxprice=420000&page=3", function(data){
-        //     var json = JSON.parse(data);
-        //     createHtml(json.properties);
-        // });
         addEvent(doc.getElementById('ax'), 'change', function change() {
           filter();
         });

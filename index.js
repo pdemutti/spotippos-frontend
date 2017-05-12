@@ -13,8 +13,12 @@ var hbs = exphbs.create({
     // Specify helpers which are only registered on this instance.
     helpers: {
         input_label: function (context, options) {
-          var id = options.hash.id;
-          return '<label for="'+ id +'" class="control-label">'+ context +'</label>';
+           id = options.hash.id;
+           return '<label for="'+ id +'" class="control-label">'+ context +'</label>';
+         },
+        input_text: function (context, options) {
+           id = options.hash.id;
+           return '<input type="text" id="'+ id +'" class="filter-field" name="'+ id +'" placeholder="'+ id +'">';
          },
         bar: function () { return 'BAR!'; },
         foo: function(){
@@ -27,7 +31,7 @@ app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
   // console.log(req);
-  res.render('index', {title: 'Spotippos Anuncios'});
+  res.render('index', {title: 'Spotippos Anuncios', helpers: hbs.helpers});
 })
 
 app.get('/filter', function (req, res, next) {
