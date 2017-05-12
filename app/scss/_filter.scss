@@ -1,0 +1,22 @@
+#formFilter{
+  font-family: roboto;
+  width: 230px;
+  ul {
+    width: 100%;
+    padding: 3px;
+    height: 300px;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    float: left;
+    padding: 6px;
+    input {
+      width: 95px;
+      height: 36px;
+      border-radius: 2px;
+      border: solid 1px #979797;
+      color: #979797;
+    }
+  }
+}

@@ -1,47 +1,24 @@
-
-  <form id="formFilter" method="get">
-  <fieldset>
-    <legend>Filter</legend>
     <ul>
-    <li>
-      <input type="text" id="ax" class="filter-field" name="ax" placeholder="ax">
-    </li>
-    <li>
-      <input type="text" id="ay" class="filter-field" name="ay" placeholder="ay">
-    </li>
-    <li>
-      <input type="text" id="bx" class="filter-field" name="bx" placeholder="bx">
-    </li>
-    <li>
-      <input type="text" id="by" class="filter-field" name="by" placeholder="by">
-    </li>
-    <li>
-      <input type="text" id="id" class="filter-field" name="id" placeholder="id">
-    </li>
-    <li>
-      <input type="text" id="squareMeters" class="filter-field" name="squareMeters" placeholder="squareMeters">
-    </li>
-    <li>
-      <input type="text" id="beds" class="filter-field" name="beds" placeholder="beds">
-    </li>
-    <li>
-      <input type="text" id="baths" class="filter-field" name="baths" placeholder="baths">
-    </li>
-    <li>
-      <input type="text" id="minprice" class="filter-field" name="minprice" placeholder="minprice">
-    </li>
-    <li>
-      <input type="text" id="maxprice" class="filter-field" name="maxprice" placeholder="maxprice">
-    </li>
+      {{# each rooms as |room key|}}
+        <li class="result-items">
+          <div class="card">
+              <article class="">
+                  <div class="resume">
+                    <span class="myid">{{room.id}}</span>
+                    <a href="#">{{room.title}}</a>
+                    <span>{{room.description}}</span>
+                  </div>
+                  <img src="" alt="">
+                  <div class="details">
+                    <ul>
+                      <li>{{room.squareMeters}}</li>
+                      <li>{{room.baths}}</li>
+                      <li>{{room.beds}}</li>
+                    </ul>
+                  </div>
+              </article>
+          </div>
+        </li>
+      {{/each}}
     </ul>
-  </fieldset>
-  </form>
-  <div>
-    <p>{{bar}}</p>
-    <p>{{{foo}}}</p>
-
-    {{# each rooms as |room|}}
-      <p>{{room.title}}</p>
-      <p>{{room.description}}</p>
-    {{/each}}
   </div>

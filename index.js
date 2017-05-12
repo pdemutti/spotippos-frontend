@@ -27,7 +27,7 @@ app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
   // console.log(req);
-  res.render('index', {title: 'Demutti Title'});
+  res.render('index', {title: 'Spotippos Anuncios'});
 })
 
 app.get('/filter', function (req, res, next) {

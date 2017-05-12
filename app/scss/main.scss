@@ -1,6 +1,33 @@
+@import "variables";
+@import "list";
+@import "filter";
 @import "header";
-.root {
+
+
+.main {
+  display: -webkit-flex;
+  display: flex;
+  width:100%;
+  background:#EFEFEF;
+  height:500px;
+  display: -webkit-flex;
+  display: flex;
+
   div {
-    color: red;
-  }
+   background:#f9f9f9;
+   margin-right:10px;
+   -webkit-flex:1 1 auto;
+   flex:1 1 auto;
+ }
+ #filter-container {
+   -webkit-flex: initial;
+    flex: initial;
+    width: 230px;
+    min-width: 230px;
+   -webkit-order:1;
+   fieldset {
+     padding: 0; margin: 0; border: 0;
+   }
+}
+ #result-list {-webkit-order:2;}
 }

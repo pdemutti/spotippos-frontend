@@ -1,4 +1,28 @@
 @import "variables";
-.header {
+.top {
   background-color: $background-color-primary;
+  background-color: #cecece;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  .logo {
+    -webkit-order:1;
+  }
+  h1 {
+    -webkit-order:2;
+    font-family: roboto;
+  }
+}
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .top {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 500px) {
+  .top {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
 }

@@ -3,11 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <title>Spotippos Index</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" as="style" href="./static/css/main.css" />
 </head>
 <body>
+  <article>
+    <header class="top">
+      <h1>{{title}}</h1>
+      <span>logo</span>
+    </header>
+  </article>
 
-  <h1>{{title}}</h1>
-  {{{ body }}}
+  <div class="main">
+      <div id="filter-container">
+        <form id="formFilter" method="get">
+          <fieldset>
+            <legend>Filtro</legend>
+            <ul>
+            <li>
+              <input type="text" id="ax" class="filter-field" name="ax" placeholder="ax">
+            </li>
+            <li>
+              <input type="text" id="ay" class="filter-field" name="ay" placeholder="ay">
+            </li>
+            <li>
+              <input type="text" id="bx" class="filter-field" name="bx" placeholder="bx">
+            </li>
+            <li>
+              <input type="text" id="by" class="filter-field" name="by" placeholder="by">
+            </li>
+            <li>
+              <input type="text" id="id" class="filter-field" name="id" placeholder="id">
+            </li>
+            <li>
+              <input type="text" id="squareMeters" class="filter-field" name="squareMeters" placeholder="squareMeters">
+            </li>
+            <li>
+              <input type="text" id="beds" class="filter-field" name="beds" placeholder="beds">
+            </li>
+            <li>
+              <input type="text" id="baths" class="filter-field" name="baths" placeholder="baths">
+            </li>
+            <li>
+              <input type="text" id="minprice" class="filter-field" name="minprice" placeholder="minprice">
+            </li>
+            <li>
+              <input type="text" id="maxprice" class="filter-field" name="maxprice" placeholder="maxprice">
+            </li>
+            </ul>
+          </fieldset>
+        </form>
+      </div>
+      <div id="result-list">
+        {{{ body }}}
+      </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
   <script src="./static/js/dist/bundle.js" charset="utf-8"></script>

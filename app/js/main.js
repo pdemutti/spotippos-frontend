@@ -81,7 +81,7 @@ App.Spotippos = (function ($, win, doc) {
     function success (data){
       var current = doc.querySelector('body'),
           live = doc.createElement('html'),
-          selector = 'body > div';
+          selector = 'div > ul';
       live.innerHTML = data;
       current.querySelector(selector).innerHTML = live.querySelector(selector).innerHTML;
     }
