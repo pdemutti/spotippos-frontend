@@ -11,6 +11,9 @@
     list-style: none;
     float: left;
     padding: 6px;
+    display: flex;
+    height: 60px;
+    flex-direction: column;
     input {
       width: 95px;
       height: 36px;

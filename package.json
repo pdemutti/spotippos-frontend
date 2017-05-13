@@ -21,6 +21,7 @@
   "devDependencies": {
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
+    "gulp-consolidate": "^0.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",

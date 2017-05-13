@@ -4,6 +4,10 @@ var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watch = require('gulp-watch');
+var async = require('async');
+var iconfont = require('gulp-iconfont');
+var consolidate = require('gulp-consolidate');
+var runTimestamp = Math.round(Date.now()/1000);
 
 gulp.task('sass', function() {
     gulp.src('./app/scss/*.scss')
@@ -24,3 +28,4 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     gulp.watch('./app/scss/*.scss', ['sass'])
 });
+ 

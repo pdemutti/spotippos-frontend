@@ -6,45 +6,12 @@ App.Spotippos = (function ($, win, doc) {
     var params = {}; // [{ax: 1}, {page: 4}, {bx: 20}]
 
     function setup () {
-        addEvent(doc.getElementById('ax'), 'change', function change() {
+      var elements = doc.getElementsByClassName('filter-field');
+      for (var i = 0; i < elements.length; i++) {
+        addEvent(elements[i], 'change', function change() {
           filter();
         });
-
-        addEvent(doc.getElementById('ay'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('bx'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('by'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('id'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('squareMeters'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('beds'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('baths'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('minprice'), 'change', function change() {
-          filter();
-        });
-
-        addEvent(doc.getElementById('maxprice'), 'change', function change() {
-          filter();
-        });
+      }
     }
 
     function getParams() {
