@@ -6,14 +6,18 @@ App.Spotippos = (function ($, win, doc) {
     var params = {}; // [{ax: 1}, {page: 4}, {bx: 20}]
 
     function setup () {
+      var page = doc.getElementsByClassName('paginate');
       var elements = doc.getElementsByClassName('filter-field');
       for (var i = 0; i < elements.length; i++) {
         addEvent(elements[i], 'change', function change() {
           filter();
         });
       }
+      for (var i = 0; i < page.length; i++) {
+        var pageNumber = page[i].attr('data-page');
+        addEvent(elements[i], 'click', function paginate(pageNumber));
+      }
     }
-
     function getParams() {
       var urlEncondedParams = '';
       var i;
