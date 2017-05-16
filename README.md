@@ -13,6 +13,7 @@ The mission is create a result page with all spotippos advertisements
 Make sure you have installed all of the following prerequisites on your development machine:
 
 * Node.js - [Download and install Node.js](https://nodejs.org/en/download/);
+* Gulp - [Download and install Gulp](http://gulpjs.com/);
 
 Quick install
 -------------
@@ -22,6 +23,9 @@ The first thing you should do, is install the Node.js dependencies. To install N
 ```bash
 $ npm install
 ```
+##  Template engine
+
+> **Handlebars:** provides the power necessary to build semantic templates with a logic-less templating engine that dynamically generates your HTML page.
 
 ## Structure
 
