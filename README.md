@@ -20,9 +20,20 @@ Quick install
 
 The first thing you should do, is install the Node.js dependencies. To install Node.js dependencies you're going to use npm. In your application folder run this in the **command-line**:
 
-```bash
-$ npm install
-```
+> $ npm install:
+
+Building project
+-------------
+
+Before start spotippos application, we need to build .js and .scss files
+
+> $ gulp build
+>
+>  **or separately**:
+> -  gulp js,
+> - gulp sass.
+
+
 ##  Template engine
 
 > **Handlebars:** provides the power necessary to build semantic templates with a logic-less templating engine that dynamically generates your HTML page.
