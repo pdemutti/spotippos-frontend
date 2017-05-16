@@ -16,17 +16,29 @@ var hbs = exphbs.create({
       return '<label for="'+ id +'" class="control-label">'+ context +'</label>';
     },
     paginate: function (context, options) {
-      id = options.hash.id;
-      nmPages = context / 20; // ex. 220
+      var start = parseInt(options.data.root.atualPage, 10) - 4;
+      var end = parseInt(options.data.root.atualPage, 10) + 5;
+      var nmPages = parseInt(context / 20, 10); // ex. 220
+      var current = parseInt(options.data.root.atualPage, 10);
+
+      if (start < 1) start = 1;
+      if (end < 10 && nmPages > 10) end = 10;
+      if (end > nmPages) end = nmPages;
+
+      console.log(start, end, current);
+
       var html = "<ul class='paginate-list'>";
-        for (var i = 1; i < nmPages; i++){
-          id = options.hash.id;
-          nmPages = context / 20;
+        for (var i = start; i <= end; i++){
           html += "<li class='item' data-page>";
-            html +=  "<span class='item-page'>" + [i] + "</span>"
+          if (i === current) {
+            html +=  "<button type='button' class='item-page atual'>" + [i] + "</button>"
+          } else {
+            html +=  "<button type='button' class='item-page'>" + [i] + "</button>"
+          }
           html +=  "</li>";
         }
       html +=  "</ul>";
+
       return html;
     },
     input_text: function (context, options) {
@@ -55,6 +67,7 @@ app.get('/filter', function (req, res, next) {
     res.render('index', {
       rooms: response.data.properties,
       foundProperties: response.data.foundProperties,
+      atualPage: req.query.page || 1,
       helpers: hbs.helpers
     })
     // console.log(response.data);

@@ -30,6 +30,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "consolidate": "^0.14.5",
     "express": "^4.15.2",
     "handlebars": "^4.0.8",
