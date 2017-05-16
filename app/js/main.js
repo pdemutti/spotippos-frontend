@@ -19,11 +19,6 @@ App.Spotippos = (function ($, win, doc) {
           paginate(this.innerHTML);
         });
       }
-
-      // for (var i = 0; i < page.length; i++) {
-      //   var pageNumber = page[i].attr('data-page');
-      //   addEvent(elements[i], 'click', function paginate(pageNumber));
-      // }
     }
     function getParams() {
       var urlEncondedParams = '';
@@ -42,8 +37,10 @@ App.Spotippos = (function ($, win, doc) {
     }
 
     function getData (url, success){
+      var pageNumber = params.page || 1;
+      console.log('params page', params.page);
       var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-      xhr.open('GET', url + "?" + getParams());
+      xhr.open('GET', url + "?" + "page="+pageNumber+"&" + getParams() );
       xhr.onreadystatechange = function() {
           if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
       };

@@ -61,10 +61,12 @@ app.get('/', function (req, res) {
 
 app.get('/filter', function (req, res, next) {
 
-  console.log(req.query, getParams(req.query));
+  // console.log(req.query, getParams(req.query));
+  console.log('http://spotippos.vivareal.com/properties?' + getParams(req.query));
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
     res.render('index', {
+      title: 'Spotippos Anuncios',
       rooms: response.data.properties,
       foundProperties: response.data.foundProperties,
       atualPage: req.query.page || 1,
@@ -85,7 +87,7 @@ function getParams(params) {
   var prop;
   var date = new Date();
 
-  for (prop in params) {
+  for (prop in params) { 
     urlEncondedParams += prop + "=" + params[prop] + "&";
   }
 
