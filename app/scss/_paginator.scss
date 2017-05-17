@@ -1,5 +1,7 @@
 .paginate-list {
   display: flex;
+  align-items: center;
+  justify-content: center;
   .item {
     list-style: none;
     button {
