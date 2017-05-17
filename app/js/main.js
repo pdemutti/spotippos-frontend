@@ -37,10 +37,8 @@ App.Spotippos = (function ($, win, doc) {
     }
 
     function getData (url, success){
-      var pageNumber = params.page || 1;
-      console.log('params page', params.page);
       var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-      xhr.open('GET', url + "?" + "page="+pageNumber+"&" + getParams() );
+      xhr.open('GET', url + "?" + getParams() );
       xhr.onreadystatechange = function() {
           if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
       };
@@ -87,7 +85,7 @@ App.Spotippos = (function ($, win, doc) {
 
       console.log('page', params.page);
 
-      getData('/filter', success);
+      getData('/filter', success, params.page);
     }
 
     return {
