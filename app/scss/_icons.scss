@@ -1,0 +1,46 @@
+@font-face {
+	font-family: "Iconspotippos";
+	src: url('./public/fonts/icons/Iconspotippos.eot');
+	src: url('./public/fonts/icons/Iconspotippos.eot?#iefix') format('eot'),
+		url('./public/fonts/icons/Iconspotippos.woff2') format('woff2'),
+		url('./public/fonts/icons/Iconspotippos.woff') format('woff'),
+		url('./public/fonts/icons/Iconspotippos.ttf') format('truetype'),
+		url('./public/fonts/icons/Iconspotippos.svg#Iconspotippos') format('svg');
+}
+
+.icon:before {
+	font-family: "Iconspotippos";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-building:before {
+	content: "\E001";
+}
+
+.icon-ic-card-area:before {
+	content: "\E002";
+}
+
+.icon-ic-card-bathroom:before {
+	content: "\E003";
+}
+
+.icon-ic-card-beds:before {
+	content: "\E004";
+}
+
+.icon-logo-vivareal:before {
+	content: "\E005";
+}
+
+.icon-plus-icon:before {
+	content: "\E006";
+}

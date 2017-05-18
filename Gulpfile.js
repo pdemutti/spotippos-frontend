@@ -28,3 +28,21 @@ gulp.task('watch', function() {
     gulp.watch('./app/scss/*.scss', ['sass'])
 });
 gulp.task('build',['sass', 'js']);
+
+var iconfont = require('gulp-iconfont');
+var iconfontCss = require('gulp-iconfont-css');
+
+var fontName = 'Iconspotippos';
+
+gulp.task('iconfont', function(){
+  gulp.src(['./app/svg/*.svg'])
+    .pipe(iconfontCss({
+      fontName: fontName,
+      targetPath: '../../../app/scss/_icons.scss',
+      fontPath: './public/fonts/icons/'
+    }))
+    .pipe(iconfont({
+      fontName: fontName
+     }))
+    .pipe(gulp.dest('./public/fonts/icons/'));
+});
