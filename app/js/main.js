@@ -15,9 +15,7 @@ App.Spotippos = (function ($, win, doc) {
       }
 
       for(i = 0; i < page.length; i ++) {
-        addEvent(page[i], 'click', function click() {
-          paginate(this.innerHTML);
-        });
+        addEvent(page[i], 'click', paginate);
       }
     }
     function getParams() {
@@ -52,6 +50,9 @@ App.Spotippos = (function ($, win, doc) {
           selector = 'div > ul';
       live.innerHTML = data;
       current.querySelector(selector).innerHTML = live.querySelector(selector).innerHTML;
+
+console.log(params.clicked);
+      params.clicked.classList.add('atual');
     }
     function addEvent (el, type, handler){
       if (el.attachEvent) el.attachEvent('on'+type, handler); else el.addEventListener(type, handler);
@@ -80,12 +81,13 @@ App.Spotippos = (function ($, win, doc) {
       getData('/filter', success);
     }
 
-    function paginate(pageNumber) {
-      params.page = pageNumber;
+    function paginate() {
+      params.clicked = this;
+      params.page = this.innerHTML;
 
       console.log('page', params.page);
 
-      getData('/filter', success, params.page);
+      getData('/filter', success);
     }
 
     return {

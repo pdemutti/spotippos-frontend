@@ -1,15 +1,15 @@
 @font-face {
-	font-family: "Iconspotippos";
-	src: url('../../../public/fonts/icons/Iconspotippos.eot');
-	src: url('../../../public/fonts/icons/Iconspotippos.eot?#iefix') format('eot'),
-		url('../../../public/fonts/icons/Iconspotippos.woff2') format('woff2'),
-		url('../../../public/fonts/icons/Iconspotippos.woff') format('woff'),
-		url('../../../public/fonts/icons/Iconspotippos.ttf') format('truetype'),
-		url('../../../public/fonts/icons/Iconspotippos.svg#Iconspotippos') format('svg');
+	font-family: "typos";
+	src: url('/fonts/icons/typos.eot');
+	src: url('/fonts/icons/typos.eot?#iefix') format('eot'),
+		url('/fonts/icons/typos.woff2') format('woff2'),
+		url('/fonts/icons/typos.woff') format('woff'),
+		url('/fonts/icons/typos.ttf') format('truetype'),
+		url('/fonts/icons/typos.svg#typos') format('svg');
 }
 
 .icon:before {
-	font-family: "Iconspotippos";
+	font-family: "typos";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	font-style: normal;

@@ -52,11 +52,29 @@ app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
   // console.log(req);
-  res.render('index', {
+  // res.render('index', {
+  //     title: 'Spotippos Anuncios',
+  //     helpers: hbs.helpers
+  //   }
+  // );
+  // console.log(req.query, getParams(req.query));
+
+  axios.get(`http://spotippos.vivareal.com/properties?page=${req.query.page || 1}`)
+  .then(function (response) {
+    res.render('index', {
       title: 'Spotippos Anuncios',
+      rooms: response.data.properties,
+      foundProperties: response.data.foundProperties,
+      atualPage: req.query.page || 1,
       helpers: hbs.helpers
-    }
-  );
+    })
+    // console.log(response.data);
+    console.log('foundProperties', response.data.foundProperties);
+
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 })
 
 app.get('/filter', function (req, res, next) {
@@ -97,6 +115,6 @@ function getParams(params) {
   return urlEncondedParams;
 }
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
 app.listen('3001')
