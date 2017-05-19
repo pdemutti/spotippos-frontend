@@ -1,11 +1,9 @@
 @import "variables";
 .top {
-  background-color: $background-color-primary;
-  background-color: #cecece;
+  background-color: $header-background-color;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  background-color: #1190cd;
   color: #fff;
   .logo {
     -webkit-order:1;
@@ -15,16 +13,13 @@
     font-family: roboto;
   }
 }
-/* Medium screens */
 @media all and (max-width: 800px) {
   .top {
-    /* When on medium sized screens, we center it by evenly distributing empty space around items */
     justify-content: space-around;
   }
 }
 @media all and (max-width: 500px) {
   .top {
-    /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
   }
 }

@@ -1,6 +1,17 @@
 #formFilter{
   font-family: roboto;
   width: 230px;
+  padding-top: 12px;
+  background: $filter-bg-color;
+  label {
+    color: $text-color-secondary;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  legend {
+    color: #666;
+    padding-left: 10px;
+  }
   ul {
     width: 100%;
     padding: 3px;

@@ -1,29 +1,24 @@
   <ul>
-    {{# each rooms as |room key|}}
+    {{# each rooms as |room|}}
       <li class="result-items">
-        <div class="card">
-            <article class="">
-                <div class="resume">
-                  <span class="myid">{{room.id}}</span>
-                  <a href="#">{{room.title}}</a>
-                  <span>{{room.description}}</span>
-                </div>
-                <img src="" alt="">
-                <div class="details">
-                  <ul>
-                    <li>
-                      {{room.squareMeters}}
-                    </li>
-                    <li>
-                      <i class="icon-building icon"></i>
-                      {{room.baths}}
-                    </li>
-                    <li>{{room.beds}}</li>
-                  </ul>
-                </div>
-            </article>
-        </div>
+        <article class="">
+          <img src="https://resizedimgs.vivareal.com/TCr3xwxDug7m7in9b4txM9Hz73c=/fit-in/360x0/vr.images.sp/8ad216a36b9fc09187cc09ccfef41e4d.jpg" alt="">
+          <div class="card">
+            <div class="cod">id. {{room.id}}</div>
+            <h2 class="title">
+              <a href="#">{{room.title}}</a>
+            </h2>
+            <div class="description">{{room.description}}</div>
+            <div class="footer-details">
+              <ul>
+                <li>{{room.squareMeters}} M²</li>
+                <li>{{room.baths}} Banheiros</li>
+                <li>{{room.beds}} Quartos</li>
+              </ul>
+              <button type="button" name="button">visualizar anúncio</button>
+            </div>
+          </div>
+        </article>
       </li>
     {{/each}}
   </ul>
-{{{paginate foundProperties}}}

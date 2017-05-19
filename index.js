@@ -43,7 +43,7 @@ var hbs = exphbs.create({
     },
     input_text: function (context, options) {
       id = options.hash.id;
-      return '<input type="text" id="'+ id +'" class="filter-field" name="'+ id +'" placeholder="'+ id +'">';
+      return '<input type="text" id="'+ id +'" class="filter-field" name="'+ id +'">';
     }
   }
 });
@@ -87,7 +87,7 @@ function getParams(params) {
   var prop;
   var date = new Date();
 
-  for (prop in params) { 
+  for (prop in params) {
     urlEncondedParams += prop + "=" + params[prop] + "&";
   }
 

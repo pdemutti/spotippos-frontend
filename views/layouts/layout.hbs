@@ -41,24 +41,27 @@
                 {{{input_text id id='id'}}}
               </li>
               <li>
-                {{{input_label 'squareMeters' id='squareMeters_lb'}}}
+                {{{input_label 'Area' id='squareMeters_lb'}}}
                 {{{input_text squareMeters id='squareMeters'}}}
               </li>
               <li>
-                {{{input_label 'beds' id='beds_lb'}}}
+                {{{input_label 'Camas' id='beds_lb'}}}
                 {{{input_text beds id='beds'}}}
               </li>
               <li>
-                {{{input_label 'baths' id='baths_lb'}}}
+                {{{input_label 'Banheiros' id='baths_lb'}}}
                 {{{input_text baths id='baths'}}}
               </li>
               <li>
-                {{{input_label 'minprice' id='minprice_lb'}}}
+                {{{input_label 'Preço minimo' id='minprice_lb'}}}
                 {{{input_text minprice id='minprice'}}}
               </li>
               <li>
-                {{{input_label 'maxprice' id='maxprice_lb'}}}
+                {{{input_label 'Preço Maximo' id='maxprice_lb'}}}
                 {{{input_text ax id='maxprice'}}}
+              </li>
+              <li>
+                <input type="range" name="points" min="0" max="10">
               </li>
             </ul>
           </fieldset>
@@ -66,9 +69,10 @@
       </div>
       <div id="result-list">
         {{{ body }}}
+
       </div>
   </div>
-
+        {{{paginate foundProperties}}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
   <script src="./static/js/dist/bundle.js" charset="utf-8"></script>
 </body>

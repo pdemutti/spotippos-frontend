@@ -7,16 +7,16 @@
     button {
       display: inline-block;
       border: 1px solid rgba(0,0,0,.12);
-      background-color: #fff;
-      color: #00acff;
+      background-color: $background-color-secondary;
+      color: $paginate-list-color;
       border-right: 0 none;
       padding: 5px 10px;
       font-size: 16px;
       cursor: pointer;
     }
     button.atual {
-      background-color: #00acff;
-      color: #fff;
+      background-color: $current-page;
+      color: $text-color-primary;
     }
   }
 }
