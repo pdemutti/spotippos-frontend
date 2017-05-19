@@ -60,19 +60,15 @@
                 {{{input_label 'Preço Maximo' id='maxprice_lb'}}}
                 {{{input_text ax id='maxprice'}}}
               </li>
-              <li>
-                <input type="range" name="points" min="0" max="10">
-              </li>
             </ul>
           </fieldset>
         </form>
       </div>
       <div id="result-list">
         {{{ body }}}
-
+        {{{paginate foundProperties}}}
       </div>
   </div>
-        {{{paginate foundProperties}}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
   <script src="/js/dist/bundle.js" charset="utf-8"></script>
 </body>

@@ -51,7 +51,7 @@ App.Spotippos = (function ($, win, doc) {
       live.innerHTML = data;
       current.querySelector(selector).innerHTML = live.querySelector(selector).innerHTML;
 
-console.log(params.clicked);
+      console.log(params.clicked);
       params.clicked.classList.add('atual');
     }
     function addEvent (el, type, handler){
