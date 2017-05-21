@@ -5,11 +5,31 @@
   flex-flow: row wrap;
   justify-content: flex-start;
   color: #fff;
-  .logo {
+  .spotilogo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     -webkit-order:1;
+    width: 107px;
+    height: 60px;
+    background-color: #00acff;
+    i {
+      color: #fff;
+      text-decoration: none;
+      font-family: roboto;
+      font-weight: bold;
+      font-size: 33px;
+    }
   }
   h1 {
     -webkit-order:2;
+    padding: 0;
+    margin: 18px 0 0 17px;
+    text-transform: uppercase;
     font-family: roboto;
   }
 }

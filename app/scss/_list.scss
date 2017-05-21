@@ -3,7 +3,7 @@
   height: 720px;
   overflow-x: hidden;
   overflow-y: scroll;
-  ul {
+  .show-rooms {
     margin: 0;
     padding: 12px 11px;
     background-color: $background-color-primary;
@@ -36,7 +36,6 @@
       width: 298px;
     }
     .card {
-      position: relative;
       -webkit-box-flex: 1;
       -webkit-flex: 1;
       -ms-flex: 1;
@@ -67,8 +66,6 @@
       margin: 6px 0 5px;
     }
     .footer-details {
-      position: absolute;
-      bottom: 0;
       color: $card-color;
       display: flex;
       flex-direction: column;
@@ -90,16 +87,26 @@
         background-color: $hover-color
       }
       ul {
+        background-color: #fafafa;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
       }
       li {
         list-style: none;
-        color: $text-color-secondary;
-        font-size: 13px;
-        font-weight: bold;
-        // float: left;
+        list-style: none;
+        width: 94px;
+        span {
+          color: $text-color-secondary;
+          font-size: 13px;
+          font-weight: bold;
+          display: flex;
+        }
+      }
+      li:before {
+        font-size: 37px;
       }
     }
   }

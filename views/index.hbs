@@ -1,4 +1,4 @@
-  <ul>
+  <ul class="show-rooms">
     {{# each rooms as |room|}}
       <li class="result-items">
         <article class="">
@@ -11,9 +11,15 @@
             <div class="description">{{room.description}}</div>
             <div class="footer-details">
               <ul>
-                <li class="icon icon-building">{{room.squareMeters}} M²</li>
-                <li>{{room.baths}} Banheiros</li>
-                <li>{{room.beds}} Quartos</li>
+                <li class="icon icon-ic-card-area">
+                  <span class="room-data">{{room.squareMeters}} M²</span>
+                </li>
+                <li class="icon icon-ic-card-bathroom">
+                  <span class="room-data">{{room.baths}} Banheiros</span>
+                </li>
+                <li class="icon icon-ic-card-beds">
+                  <span class="room-data">{{room.beds}} Camas</span>
+                </li>
                 <li><button type="button" name="button">visualizar anúncio</button></li>
               </ul>
             </div>

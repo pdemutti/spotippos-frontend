@@ -62,7 +62,7 @@ app.get('/', function (req, res) {
   axios.get(`http://spotippos.vivareal.com/properties?page=${req.query.page || 1}`)
   .then(function (response) {
     res.render('index', {
-      title: 'Spotippos Anuncios',
+      title: 'Spotippos - Anúncios',
       rooms: response.data.properties,
       foundProperties: response.data.foundProperties,
       atualPage: req.query.page || 1,
@@ -84,7 +84,7 @@ app.get('/filter', function (req, res, next) {
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
     res.render('index', {
-      title: 'Spotippos Anuncios',
+      title: 'Spotippos - Anúncios',
       rooms: response.data.properties,
       foundProperties: response.data.foundProperties,
       atualPage: req.query.page || 1,
