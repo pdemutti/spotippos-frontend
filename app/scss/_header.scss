@@ -33,13 +33,10 @@
     font-family: roboto;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 1024px) {
   .top {
-    justify-content: space-around;
-  }
-}
-@media all and (max-width: 500px) {
-  .top {
-    flex-direction: column;
+    h1 {
+      margin: 18px 0 0 52px;
+    }
   }
 }

@@ -3,32 +3,35 @@ var App = App || {};
 App.Spotippos = (function ($, win, doc) {
   'use strict';
 
-    var params = {}; // [{ax: 1}, {page: 4}, {bx: 20}]
+    var params = {};
 
     function setup () {
-      // Number.prototype.validField = function () {
-      //   var patt = new RegExp(/[e, \.]/g);
-      //   var result = patt.test(thistoString());
-
-      //   if (result) {
-      //     return this.toString().replace(/[e, \.]/g, '');
-      //   }
-
-      //   return -1;
-      // };
-
       var page = doc.getElementsByClassName('item-page');
       var elements = doc.getElementsByClassName('filter-field');
       for (var i = 0; i < elements.length; i++) {
+
+        /* ONLY NUMBER ALLOWED */
+        var RemoveE = function (options) {
+          console.log(options)
+            if(this.prepare(options)) {
+            this.bind(options);
+          }
+        }
+        RemoveE.prototype.bind = function (options) {
+          addEvent(elements[i], 'keydown', this.removeLetterE);
+        }
+        RemoveE.prototype.prepare = function (options) {
+          this.input = doc.getElementsByClassName(options.class);
+          this.name = this.input ? this.input.name : '';
+          return this.input;
+        }
+        RemoveE.prototype.removeLetterE = function (evt) {
+          console.log(evt)
+          return evt.key == 'e' ? evt.preventDefault() : true;
+        }
+        new RemoveE({'class': 'filter-field'});
+
         addEvent(elements[i], 'change', function change() {
-          // var newValue = this.value.validField();
-
-          // if (newValue != '1') {
-          //   this.value = newValue.toString();
-
-          //   return;
-          // }
-
           filter();
         });
       }
@@ -37,6 +40,27 @@ App.Spotippos = (function ($, win, doc) {
         addEvent(page[i], 'click', paginate);
       }
     }
+    function onlyValid(){
+      var RemoveE = function (options) {
+        console.log(options)
+          if(this.prepare(options)) {
+          this.bind(options);
+        }
+      }
+      RemoveE.prototype.bind = function (options) {
+        addEvent(elements[i], 'keydown', this.removeLetterE);
+      }
+      RemoveE.prototype.prepare = function (options) {
+        this.input = doc.getElementsByClassName(options.class);
+        this.name = this.input ? this.input.name : '';
+        return this.input;
+      }
+      RemoveE.prototype.removeLetterE = function (evt) {
+        return evt.key == 'e' ? evt.preventDefault() : true;
+      }
+        new RemoveE({'class': 'filter-field'});
+    }
+
     function getParams() {
       var urlEncondedParams = '';
       var i;
