@@ -43,6 +43,17 @@ Or, simply:
     $ gulp
 
 
+## Run
+   To run the server:
+
+    $ npm start
+   Note: if you have `nodemon` installed in your system you can simply run:
+
+	$ nodemon
+  To access, enter on localhost (or any of the configured hosts) at port 3001.
+
+
+
 ##  Template engine
 
 > **Handlebars:** provides the power necessary to build semantic templates with a logic-less templating engine that dynamically generates your HTML page.
