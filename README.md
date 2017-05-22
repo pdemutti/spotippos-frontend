@@ -23,7 +23,7 @@ The first thing you should do, is install the Node.js dependencies. To install N
 > $ npm install:
 
 ## Building project
--------------
+
 Before start spotippos application, we need to build .js and .scss files
 
 To build everything, just build with gulp:
