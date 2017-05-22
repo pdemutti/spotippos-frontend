@@ -6,10 +6,29 @@ App.Spotippos = (function ($, win, doc) {
     var params = {}; // [{ax: 1}, {page: 4}, {bx: 20}]
 
     function setup () {
+      // Number.prototype.validField = function () {
+      //   var patt = new RegExp(/[e, \.]/g);
+      //   var result = patt.test(thistoString());
+
+      //   if (result) {
+      //     return this.toString().replace(/[e, \.]/g, '');
+      //   }
+
+      //   return -1;
+      // };
+
       var page = doc.getElementsByClassName('item-page');
       var elements = doc.getElementsByClassName('filter-field');
       for (var i = 0; i < elements.length; i++) {
         addEvent(elements[i], 'change', function change() {
+          // var newValue = this.value.validField();
+
+          // if (newValue != '1') {
+          //   this.value = newValue.toString();
+
+          //   return;
+          // }
+
           filter();
         });
       }
@@ -45,14 +64,14 @@ App.Spotippos = (function ($, win, doc) {
       return xhr;
     }
     function success (data){
+      // console.log('data', data);
       var current = doc.querySelector('body'),
           live = doc.createElement('html'),
-          selector = 'div > ul';
+          selector = '#result-list';
       live.innerHTML = data;
       current.querySelector(selector).innerHTML = live.querySelector(selector).innerHTML;
 
-      console.log(params.clicked);
-      params.clicked.classList.add('atual');
+      setup();
     }
     function addEvent (el, type, handler){
       if (el.attachEvent) el.attachEvent('on'+type, handler); else el.addEventListener(type, handler);
@@ -85,7 +104,7 @@ App.Spotippos = (function ($, win, doc) {
       params.clicked = this;
       params.page = this.innerHTML;
 
-      console.log('page', params.page);
+      // console.log('page', params.page);
 
       getData('/filter', success);
     }

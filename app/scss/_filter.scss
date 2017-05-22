@@ -1,36 +1,51 @@
-#formFilter{
-  font-family: roboto;
-  width: 230px;
-  padding-top: 12px;
-  background: $filter-bg-color;
-  label {
-    color: $text-color-secondary;
-    font-size: 12px;
-    text-transform: uppercase;
+.aside-2 {
+  order: 2;
+  #formFilter{
+    font-family: roboto;
+    width: 230px;
+    padding-top: 12px;
+    background: $filter-bg-color;
+    label {
+      color: $text-color-secondary;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    legend {
+      color: #666;
+      padding-left: 10px;
+    }
+    ul {
+      width: 100%;
+      padding: 3px;
+      height: 300px;
+      margin: 0;
+    }
+    li {
+      list-style: none;
+      float: left;
+      padding: 6px;
+      display: flex;
+      height: 60px;
+      flex-direction: column;
+      input {
+        width: 95px;
+        height: 36px;
+        border-radius: 2px;
+        border: solid 1px #979797;
+        color: #979797;
+      }
+    }
   }
-  legend {
-    color: #666;
-    padding-left: 10px;
-  }
-  ul {
-    width: 100%;
-    padding: 3px;
-    height: 300px;
-    margin: 0;
-  }
-  li {
-    list-style: none;
-    float: left;
-    padding: 6px;
-    display: flex;
-    height: 60px;
-    flex-direction: column;
-    input {
-      width: 95px;
-      height: 36px;
-      border-radius: 2px;
-      border: solid 1px #979797;
-      color: #979797;
+  #filter-container {
+    -webkit-flex: initial;
+    flex: initial;
+    width: 230px;
+    min-width: 230px;
+    -webkit-order:1;
+    padding: 0 12px;
+
+    fieldset {
+      padding: 0; margin: 0; border: 0;
     }
   }
 }

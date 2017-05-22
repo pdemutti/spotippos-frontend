@@ -1,30 +1,30 @@
-  <ul class="show-rooms">
-    {{# each rooms as |room|}}
-      <li class="result-items">
-        <article class="">
-          <img src="https://resizedimgs.vivareal.com/TCr3xwxDug7m7in9b4txM9Hz73c=/fit-in/360x0/vr.images.sp/8ad216a36b9fc09187cc09ccfef41e4d.jpg" alt="">
-          <div class="card">
-            <div class="cod">id. {{room.id}}</div>
-            <h2 class="title">
-              <a href="#">{{room.title}}</a>
-            </h2>
-            <div class="description">{{room.description}}</div>
-            <div class="footer-details">
-              <ul>
-                <li class="icon icon-ic-card-area">
-                  <span class="room-data">{{room.squareMeters}} M²</span>
-                </li>
-                <li class="icon icon-ic-card-bathroom">
-                  <span class="room-data">{{room.baths}} Banheiros</span>
-                </li>
-                <li class="icon icon-ic-card-beds">
-                  <span class="room-data">{{room.beds}} Camas</span>
-                </li>
-                <li><button type="button" name="button">visualizar anúncio</button></li>
-              </ul>
-            </div>
+<ul class="show-rooms">
+  {{# each rooms as |room|}}
+    <li class="result-items">
+      <article class="">
+        <img src="https://resizedimgs.vivareal.com/TCr3xwxDug7m7in9b4txM9Hz73c=/fit-in/360x0/vr.images.sp/8ad216a36b9fc09187cc09ccfef41e4d.jpg" alt="">
+        <div class="card">
+          <div class="cod">id. {{room.id}}</div>
+          <h2 class="title">
+            <a href="#">{{room.title}}</a>
+          </h2>
+          <div class="description">{{room.description}}</div>
+          <div class="footer-details">
+            <ul>
+              <li class="icon icon-ic-card-area">
+                <span class="room-data">{{room.squareMeters}} M²</span>
+              </li>
+              <li class="icon icon-ic-card-beds">
+                <span class="room-data">{{room.beds}} Camas</span>
+              </li>
+              <li class="icon icon-ic-card-bathroom">
+                <span class="room-data">{{room.baths}} Banheiros</span>
+              </li>
+            </ul>
+            <button type="button" name="button">visualizar anúncio</button>
           </div>
-        </article>
-      </li>
-    {{/each}}
-  </ul>
+        </div>
+      </article>
+    </li>
+  {{/each}}
+</ul>

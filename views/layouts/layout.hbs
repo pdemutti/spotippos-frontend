@@ -16,7 +16,30 @@
     </header>
   </article>
 
-  <div class="main">
+  <div class="grid">
+    <div class="grid-cell main">
+      <div id="result-list">
+        {{{ body }}}
+        {{{paginate foundProperties atualPage=atualPage}}}
+      </div>
+    </div>
+    <div class="Grid-cell aside aside-1">
+      <nav class="tools">
+        <ul>
+          <li>
+          <button class="icon icon-building">
+            Anuncios
+          </button>
+          </li>
+          <li>
+            <button class="icon icon-plus-icon">
+              Novos Anuncios
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Grid-cell aside aside-2">
       <div id="filter-container">
         <form id="formFilter" method="get">
           <fieldset>
@@ -66,10 +89,7 @@
           </fieldset>
         </form>
       </div>
-      <div id="result-list">
-        {{{ body }}}
-        {{{paginate foundProperties}}}
-      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js" charset="utf-8"></script>
   <script src="/js/dist/bundle.js" charset="utf-8"></script>
