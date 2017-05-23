@@ -48,3 +48,21 @@ gulp.task('watch', function() {
 });
 gulp.task('build',['sass', 'js', 'iconfont']);
 gulp.task('default', ['watch', 'build']);
+
+var iconfont = require('gulp-iconfont');
+var iconfontCss = require('gulp-iconfont-css');
+
+var fontName = 'typos';
+
+gulp.task('iconfont', function(){
+  gulp.src(['./app/svg/*.svg'])
+    .pipe(iconfontCss({
+      fontName: fontName,
+      targetPath: '../../../app/scss/_icons.scss',
+      fontPath: '/fonts/icons/'
+    }))
+    .pipe(iconfont({
+      fontName: fontName
+     }))
+    .pipe(gulp.dest('./public/fonts/icons/'));
+});
