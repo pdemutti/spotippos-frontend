@@ -5,6 +5,9 @@
 @import "header";
 @import "icons";
 
+body {
+  margin: 0;
+}
 
 .main {
   order: 3;
@@ -54,6 +57,10 @@
       margin: 10px 0 15px 10px;
       text-transform: uppercase;
       font-weight: bold;
+    }
+    button:hover {
+      background-color: #ff6c00;
+      cursor: pointer;
     }
     button:before {
       font-size: 41px;
