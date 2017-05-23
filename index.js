@@ -4,7 +4,6 @@ var fs = require('fs')
 var _ = require('lodash')
 var engines = require('consolidate')
 var axios = require('axios');
-// var hbs = require('express-handlebars');
 var exphbs = require('express-handlebars');
 
 app.engine('hbs', exphbs({extname: 'hbs', defaultLayout: 'layout', layoutDir: __dirname + '/views/layouts/'}))
@@ -24,8 +23,6 @@ var hbs = exphbs.create({
       if (start < 1) start = 1;
       if (end < 10 && nmPages > 10) end = 10;
       if (end > nmPages) end = nmPages;
-
-      console.log(start, end, current);
 
       var html = "<ul class='paginate-list'>";
         for (var i = start; i <= end; i++){
@@ -51,13 +48,6 @@ app.set('views', './views')
 app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
-  // console.log(req);
-  // res.render('index', {
-  //     title: 'Spotippos Anuncios',
-  //     helpers: hbs.helpers
-  //   }
-  // );
-  // console.log(req.query, getParams(req.query));
 
   axios.get(`http://spotippos.vivareal.com/properties?page=${req.query.page || 1}`)
   .then(function (response) {
@@ -68,8 +58,6 @@ app.get('/', function (req, res) {
       atualPage: req.query.page || 1,
       helpers: hbs.helpers
     })
-    // console.log(response.data);
-    console.log('foundProperties', response.data.foundProperties);
 
   })
   .catch(function (error) {
@@ -79,8 +67,6 @@ app.get('/', function (req, res) {
 
 app.get('/filter', function (req, res, next) {
 
-  // console.log(req.query, getParams(req.query));
-  console.log('http://spotippos.vivareal.com/properties?' + getParams(req.query));
   axios.get('http://spotippos.vivareal.com/properties?' + getParams(req.query))
   .then(function (response) {
     res.render('index', {
@@ -90,8 +76,6 @@ app.get('/filter', function (req, res, next) {
       atualPage: req.query.page || 1,
       helpers: hbs.helpers
     })
-    // console.log(response.data);
-    console.log('foundProperties', response.data.foundProperties);
 
   })
   .catch(function (error) {
@@ -110,8 +94,6 @@ function getParams(params) {
   }
 
   urlEncondedParams += '_' + date.getTime();
-
-  // retornará: ax=1&page=4&bx=20
   return urlEncondedParams;
 }
 

@@ -1,10 +1,16 @@
 .aside-2 {
   order: 2;
-  #formFilter{
+  #formFilter {
+    -webkit-flex: initial;
+    flex: initial;
+    -webkit-order:1;
+    padding: 0 12px;
     font-family: roboto;
     width: 230px;
-    padding-top: 12px;
     background: $filter-bg-color;
+    fieldset {
+      padding: 0; margin: 0; border: 0;
+    }
     label {
       color: $text-color-secondary;
       font-size: 12px;
@@ -16,7 +22,7 @@
     }
     ul {
       width: 100%;
-      padding: 3px;
+      padding: 0;
       height: 300px;
       margin: 0;
     }
@@ -36,16 +42,41 @@
       }
     }
   }
-  #filter-container {
-    -webkit-flex: initial;
-    flex: initial;
-    width: 230px;
-    min-width: 230px;
-    -webkit-order:1;
-    padding: 0 12px;
+  @media all and (max-width: 768px) {
+    #formFilter {
+      width: 100%;
+      padding: 0;
+    }
+    #filter-container {
+      padding: 0;
+      fieldset {
+        overflow: scroll;
+        height: 159px;
+      }
+    }
+  }
+}
 
-    fieldset {
-      padding: 0; margin: 0; border: 0;
+
+@media all and (max-width: 320px) {
+  .aside-2 {
+    #filter-container {
+      padding: 0;
+      fieldset {
+        overflow-x: scroll;
+        height: 159px;
+      }
+    }
+  }
+}
+@media all and (max-width: 375px) {
+  .aside-2 {
+    #filter-container {
+      padding: 0;
+      fieldset {
+        overflow-x: scroll;
+        height: 159px;
+      }
     }
   }
 }
