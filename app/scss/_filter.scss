@@ -50,7 +50,7 @@
     #filter-container {
       padding: 0;
       fieldset {
-        overflow: scroll;
+        overflow-y: scroll;
         height: 159px;
       }
     }
@@ -60,7 +60,7 @@
       #filter-container {
         padding: 0;
         fieldset {
-          overflow-x: scroll;
+          overflow-y: scroll;
           height: 159px;
         }
       }
@@ -71,7 +71,7 @@
       #filter-container {
         padding: 0;
         fieldset {
-          overflow-x: scroll;
+          overflow-y: scroll;
           height: 159px;
         }
       }
