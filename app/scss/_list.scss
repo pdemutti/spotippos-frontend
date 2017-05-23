@@ -80,7 +80,7 @@
       text-align: center;
       background: #fff;
       border: solid 1px #e5e5e5;
-      color: #878787;
+      color: $card-cod-color;
       text-transform: uppercase;
       font-size: 14px;
       font-weight: 600;
@@ -140,31 +140,27 @@
         font-size: 37px;
         line-height: 2px;
         color: #fafafa;
-        background-color: #999999;
+        background-color: $text-color-secondary;
         overflow: hidden;
       }
     }
   }
 
   @media all and (max-width: 768px) {
-
-  article {
-    flex-direction: column;
-    .footer-details {
-      display: block;
-      button {
-      display: block;
-      margin: 15px auto;
-      text-align: center;
-      width: 100%;
-      }
-      ul {
-      width: 100%;
+    article {
+      flex-direction: column;
+      .footer-details {
+        display: block;
+        button {
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+        width: 100%;
+        }
+        ul {
+        width: 100%;
+        }
       }
     }
   }
-}
-
-
-
 }

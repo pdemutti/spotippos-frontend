@@ -38,7 +38,7 @@ var hbs = exphbs.create({
 
       return html;
     },
-    input_text: function (context, options) {
+    input_number: function (context, options) {
       id = options.hash.id;
       return '<input type="number" id="'+ id +'" class="filter-field" name="'+ id +'">';
     }
